@@ -6,7 +6,7 @@
 set -e
 
 ENVIRONMENT=${1:-local}
-PROJECT_NAME="california-housing-ml-api"
+PROJECT_NAME="mlops-assignment-1-ml-api"
 
 echo "🚀 Deploying $PROJECT_NAME to $ENVIRONMENT environment..."
 

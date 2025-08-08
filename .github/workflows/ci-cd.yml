@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 env:
-  DOCKER_IMAGE: california-housing-ml-api
+  DOCKER_IMAGE: mlops-assignment-1-ml-api
   DOCKER_TAG: ${{ github.sha }}
 
 jobs:
