@@ -75,8 +75,8 @@ A complete end-to-end MLOps pipeline for predicting California housing prices us
 │ Monitoring Layer│    │  MLOps Layer    │    │ Infrastructure  │
 ├─────────────────┤    ├─────────────────┤    ├─────────────────┤
 │ • Prometheus    │◀───│ • Auto Retrain  │    │ • Docker        │
-│ • Grafana       │    │ • Drift Detection│    │ • CI/CD Pipeline│
-│ • Logging       │    │ • Docker Compose│    │ • GitHub Actions│
+│ • Grafana       │    │ • Drift Detection│    │ • Docker Compose│
+│ • Logging       │    │ • CI/CD Pipeline│    │ • GitHub Actions│
 └─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
 
@@ -160,7 +160,7 @@ curl -X POST "http://localhost:8000/predict" \
      -d '{"features": {"MedInc": 8.3014, "HouseAge": 21.0, "AveRooms": 6.238137, "AveBedrms": 0.971880, "Population": 2401.0, "AveOccup": 2.109842, "Latitude": 37.86, "Longitude": -122.22}}'
 
 # 3. View MLflow experiments
-open http://localhost:5000
+open http://localhost:5001
 
 # 4. Monitor with Grafana
 open http://localhost:3000
@@ -175,7 +175,7 @@ python src/models/retrain.py --manual
 |---------|-----|-------------|
 | ML API | http://localhost:8000 | Main prediction API |
 | API Docs | http://localhost:8000/docs | Interactive API documentation |
-| MLflow | http://localhost:5000 | Experiment tracking UI |
+| MLflow | http://localhost:5001 | Experiment tracking UI |
 | Prometheus | http://localhost:9090 | Metrics collection |
 | Grafana | http://localhost:3000 | Monitoring dashboard |
 

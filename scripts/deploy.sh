@@ -34,7 +34,7 @@ case $ENVIRONMENT in
         fi
         
         # Check MLflow
-        if curl -f http://localhost:5000; then
+        if curl -f http://localhost:5001; then
             echo "✅ MLflow is running"
         else
             echo "⚠️ MLflow might not be ready yet"
@@ -60,7 +60,7 @@ case $ENVIRONMENT in
         echo "📊 Access the services:"
         echo "  • ML API: http://localhost:8000"
         echo "  • API Docs: http://localhost:8000/docs"
-        echo "  • MLflow UI: http://localhost:5000"
+        echo "  • MLflow UI: http://localhost:5001"
         echo "  • Prometheus: http://localhost:9090"
         echo "  • Grafana: http://localhost:3000 (admin/admin)"
         echo ""

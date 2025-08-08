@@ -25,7 +25,7 @@ cd california-housing-mlops
 
 This will start all services:
 - ML API on port 8000
-- MLflow on port 5000  
+- MLflow on port 5001  
 - Prometheus on port 9090
 - Grafana on port 3000
 
@@ -68,7 +68,7 @@ This will start all services:
 
 4. **Start MLflow server:**
    ```bash
-   mlflow server --host 0.0.0.0 --port 5000
+   mlflow server --host 0.0.0.0 --port 5001
    ```
 
 5. **Start API server:**
@@ -169,7 +169,7 @@ This will:
 
 ### 2. View Experiments
 
-Visit http://localhost:5000 to access the MLflow UI and view:
+Visit http://localhost:5001 to access the MLflow UI and view:
 - Experiment runs
 - Model metrics
 - Model artifacts
@@ -340,66 +340,4 @@ def validate_your_field(cls, v):
    ```
 
 2. **Model not loading:**
-   - Check if model files exist in `artifacts/` or `models/` directory
-   - Run training first: `python src/models/train.py`
-
-3. **API returns 503 (Service Unavailable):**
-   - Model is not loaded
-   - Check container logs: `docker-compose logs ml-api`
-
-4. **MLflow UI not accessible:**
-   - Wait for MLflow service to start (may take 1-2 minutes)
-   - Check logs: `docker-compose logs mlflow`
-
-### Logs
-
-View service logs:
-```bash
-docker-compose logs -f ml-api     # API logs
-docker-compose logs -f mlflow     # MLflow logs
-docker-compose logs -f prometheus # Prometheus logs
-docker-compose logs -f grafana    # Grafana logs
-```
-
-## 📚 Additional Resources
-
-- **FastAPI Documentation:** https://fastapi.tiangolo.com/
-- **MLflow Documentation:** https://mlflow.org/docs/latest/
-- **Prometheus Documentation:** https://prometheus.io/docs/
-- **Grafana Documentation:** https://grafana.com/docs/
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature`
-3. Make your changes
-4. Run tests: `pytest tests/`
-5. Commit changes: `git commit -am 'Add your feature'`
-6. Push to branch: `git push origin feature/your-feature`
-7. Submit a pull request
-
-## 📄 API Reference
-
-### Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/` | Root endpoint |
-| GET | `/health` | Health check |
-| POST | `/predict` | Single prediction |
-| POST | `/predict/batch` | Batch prediction |
-| GET | `/model/info` | Model information |
-| GET | `/metrics` | Prometheus metrics |
-| POST | `/model/retrain` | Trigger retraining |
-
-### Data Schema
-
-**Input Features:**
-- All features must be numeric
-- Valid ranges are enforced (see API docs)
-- Bedroom count cannot exceed room count
-
-**Response Format:**
-- Predictions are in hundreds of thousands of dollars
-- Timestamps are in ISO format
-- Model version indicates which model was used
+   - Check if model files exist in `artifacts/`

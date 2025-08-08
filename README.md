@@ -63,7 +63,7 @@ pip install -r requirements.txt
 
 4. Set up MLflow:
 ```bash
-mlflow server --host 0.0.0.0 --port 5000
+mlflow server --host 0.0.0.0 --port 5001
 ```
 
 ### Docker Deployment
@@ -97,7 +97,7 @@ curl -X POST "http://localhost:8000/predict" \
 
 ## 📊 Monitoring
 
-- **MLflow UI**: http://localhost:5000
+- **MLflow UI**: http://localhost:5001
 - **API Docs**: http://localhost:8000/docs
 - **Prometheus**: http://localhost:9090
 - **Grafana**: http://localhost:3000
